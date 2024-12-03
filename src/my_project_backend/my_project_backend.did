@@ -1,3 +1,14 @@
+type Blog = record {
+    title: text;
+    date: nat64;
+    content: text;
+    tags: vec text;
+};
+
+type Result = variant { Ok: text; Err: text; }
+
 service : {
     "greet": (text) -> (text) query;
-}
+    "add_blog": (text, text, vec text) -> (variant { Ok: text; Err: text });
+    "get_blogs": () -> (vec Blog) query;
+};
