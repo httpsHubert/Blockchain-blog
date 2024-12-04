@@ -354,6 +354,8 @@ dependencies = [
  "candid",
  "ic-cdk",
  "ic-cdk-timers",
+ "serde",
+ "serde_derive",
 ]
 
 [[package]]

@@ -5,10 +5,18 @@ type Blog = record {
     tags: vec text;
 };
 
+type Config = record {
+    max_tags_count: nat8;
+    max_content_length: nat16;
+    max_title_length: nat8;
+    tags: vec text;
+};
+
 type Result = variant { Ok: text; Err: text; }
 
 service : {
     "greet": (text) -> (text) query;
     "add_blog": (text, text, vec text) -> (variant { Ok: text; Err: text });
     "get_blogs": () -> (vec Blog) query;
+    "add_config": (Config) -> ();
 };
